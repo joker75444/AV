@@ -25,7 +25,7 @@ if res ~= 200 then
 io.write('\n\27[1;31m»» Sorry The Token is not Correct \n\27[0;39;49m')
 else
 io.write('\n\27[1;31m»» The Token Is Saved\n\27[0;39;49m')
-database:set(Server_Tshake.."Token_Av",token)
+database:set(Server_Av.."Token_Av",token)
 end 
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
@@ -63,7 +63,7 @@ end
 os.execute('lua start.lua')
 end
 local function Files_Av_Info()
-Create_Info(database:get(Server_Av.."Token_Av"),database:get(Server_Av.."Id_Tshake"),database:get(Server_Av.."UserName_Av"))   
+Create_Info(database:get(Server_Av.."Token_Av"),database:get(Server_Av.."Id_Av"),database:get(Server_Av.."UserName_Av"))   
 local RunAv = io.open("Av", 'w')
 RunTshake:write([[
 #!/usr/bin/env bash

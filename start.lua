@@ -53,7 +53,7 @@ io.write('\n\27[1;31m»» Sorry The UserName Is Channel \n\27[0;39;49m')
 os.execute('lua start.lua')
 else
 io.write('\n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m')
-database:set(Server_Tshake.."UserName_Av",Json.Info.Username)
+database:set(Server_Av.."UserName_Av",Json.Info.Username)
 database:set(Server_Av.."Id_Av",Json.Info.Id)
 end
 end

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd $HOME/Avx
+cd $HOME/Av
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
@@ -10,7 +10,7 @@ chmod +x ts
 get() {
 rm -fr Av.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/TEAMAvX/Avx/master/Av.lua"
+wget "https://raw.githubusercontent.com/joker75444/Av/master/Av.lua"
 lua start.lua
 }
 installall(){

@@ -16,7 +16,7 @@ UserName = "]]..UserName..[["
 ]])
 Tshake_Info_Sudo:close()
 end  
-if not database:get(Server_Tshake.."Token_Tshake") then
+if not database:get(Server_Av.."Token_Av") then
 print("\27[1;34m»» Send Your Token Bot :\27[m")
 local token = io.read()
 if token ~= '' then
@@ -25,7 +25,7 @@ if res ~= 200 then
 io.write('\n\27[1;31m»» Sorry The Token is not Correct \n\27[0;39;49m')
 else
 io.write('\n\27[1;31m»» The Token Is Saved\n\27[0;39;49m')
-database:set(Server_Tshake.."Token_Tshake",token)
+database:set(Server_Tshake.."Token_Av",token)
 end 
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
@@ -34,7 +34,7 @@ os.execute('lua start.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
-if not database:get(Server_Tshake.."UserName_Av") then
+if not database:get(Server_Av.."UserName_Av") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
@@ -53,7 +53,7 @@ io.write('\n\27[1;31m»» Sorry The UserName Is Channel \n\27[0;39;49m')
 os.execute('lua start.lua')
 else
 io.write('\n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m')
-database:set(Server_Tshake.."UserName_Tshake",Json.Info.Username)
+database:set(Server_Tshake.."UserName_Av",Json.Info.Username)
 database:set(Server_Av.."Id_Av",Json.Info.Id)
 end
 end
@@ -67,7 +67,7 @@ Create_Info(database:get(Server_Av.."Token_Av"),database:get(Server_Av.."Id_Tsha
 local RunAv = io.open("Av", 'w')
 RunTshake:write([[
 #!/usr/bin/env bash
-cd $HOME/Avx
+cd $HOME/Av
 token="]]..database:get(Server_Av.."Token_Av")..[["
       
 while(true) do
@@ -79,7 +79,7 @@ RunAv:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/Avx
+cd $HOME/Av
 while(true) do
 rm -fr ../.telegram-cli
 screen -S AvE -X kill

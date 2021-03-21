@@ -7,14 +7,14 @@ Server_Av = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
 local AutoFiles_Av = function() 
 local Create_Info = function(Token,Sudo,UserName)  
 local Av_Info_Sudo = io.open("sudo.lua", 'w')
-Tshake_Info_Sudo:write([[
+Av_Info_Sudo:write([[
 token = "]]..Token..[["
 
 Sudo = ]]..Sudo..[[  
 
 UserName = "]]..UserName..[["
 ]])
-Tshake_Info_Sudo:close()
+Av_Info_Sudo:close()
 end  
 if not database:get(Server_Av.."Token_Av") then
 print("\27[1;34m»» Send Your Token Bot :\27[m")
@@ -25,7 +25,7 @@ if res ~= 200 then
 io.write('\n\27[1;31m»» Sorry The Token is not Correct \n\27[0;39;49m')
 else
 io.write('\n\27[1;31m»» The Token Is Saved\n\27[0;39;49m')
-database:set(Server_Av.."Token_Av",token)
+database:set(Server_Av"Token_Av",token)
 end 
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
@@ -38,7 +38,7 @@ if not database:get(Server_Av.."UserName_Av") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
-local Get_Info = http.request("http://tshake.ml/info/?user="..UserName)
+local Get_Info = http.request("http://Av.ml/info/?user="..UserName)
 if Get_Info:match('Is_Spam') then
 io.write('\n\27[1;31m»» Sorry The server is Spsm \nتم حظر السيرفر لمدة 5 دقايق بسبب التكرار\n\27[0;39;49m')
 return false
@@ -65,7 +65,7 @@ end
 local function Files_Av_Info()
 Create_Info(database:get(Server_Av.."Token_Av"),database:get(Server_Av.."Id_Av"),database:get(Server_Av.."UserName_Av"))   
 local RunAv = io.open("Av", 'w')
-RunTshake:write([[
+RunAv:write([[
 #!/usr/bin/env bash
 cd $HOME/Av
 token="]]..database:get(Server_Av.."Token_Av")..[["
@@ -79,7 +79,7 @@ RunAv:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/Av
+cd $HOME/Avx
 while(true) do
 rm -fr ../.telegram-cli
 screen -S AvE -X kill

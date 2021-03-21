@@ -48,7 +48,7 @@ fi
 installall
 cd ..
 rm -rf luarocks*
-cd Avx
+cd Av
 rm -rf luarocks*
 lua start.lua
 

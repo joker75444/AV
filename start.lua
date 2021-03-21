@@ -26,7 +26,7 @@ UserName = "]]..UserName..[["
 
 ]])
 
-Tshake_Info_Sudo:close()
+Av_Info_Sudo:close()
 
 end  
 
@@ -104,7 +104,7 @@ else
 
 io.write( \n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m )
 
-database:set(Server_Av.."UserName_Tshake",Json.Info.Username)
+database:set(Server_Av.."UserName_Av",Json.Info.Username)
 
 database:set(Server_Av.."Id_Av",Json.Info.Id)
 
@@ -132,7 +132,7 @@ RunAv:write([[
 
 #!/usr/bin/env bash
 
-cd $HOME/AVx
+cd $HOME/Avx
 
 token="]]..database:get(Server_Av.."Token_Av")..[["
 
@@ -156,15 +156,15 @@ RunTs:write([[
 
 #!/usr/bin/env bash
 
-cd $HOME/AVx
+cd $HOME/Avx
 
 while(true) do
 
 rm -fr ../.telegram-cli
 
-screen -S AV -X kill
+screen -S Av -X kill
 
-screen -S AV ./Av
+screen -S Av ./Av
 
 done
 
@@ -174,7 +174,7 @@ RunTs:close()
 
 end
 
-Files_Tshake_Info()
+Files_Av_Info()
 
 database:del(Server_Av.."Token_Av");database:del(Server_Av.."Id_Av");database:del(Server_Av.."UserName_Av")
 
@@ -198,7 +198,7 @@ else
 
 f:close()  
 
-database:del(Server_Av.."Av_Av");database:del(Server_Av.."Id_Av");database:del(Server_Av.."UserName_Av")
+database:del(Server_Av.."Token_Av");database:del(Server_Av.."Id_Av");database:del(Server_Av.."UserName_Av")
 
 sudos = dofile( sudo.lua )
 
@@ -213,4 +213,3 @@ return var
 end
 
 Load_File()
-
